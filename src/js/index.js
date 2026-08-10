@@ -9,6 +9,7 @@ const btn = document.querySelector(".btn-upload");
 const listBody = document.querySelector(".list-body");
 const inputSearch = document.querySelector(".search");
 const sortBtn = document.querySelector("#sortDate");
+const iconBtn = document.querySelector(".iconPrice");
 
 // ! EVEANTS
 btn.addEventListener("click", getUser);
@@ -84,20 +85,34 @@ function addData(data) {
 }
 
 // SORT DATA
-sortBtn.addEventListener("click", sortData);
+const selectSortElement = document.querySelector(".sort-price");
+
+selectSortElement.addEventListener("change", sortData);
+
 async function sortData() {
-  let isAscending = true;
+  const selectSort = selectSortElement.value;
+
   const res = await app.get("transactions");
   const data = res.data;
-  if (isAscending) {
-    const oldested = [...data].sort((a, b) => b.price - a.price);
-    return addData(oldested);
-  } else {
-    const newEsted = [...data].sort((a, b) => a.price - b.price);
-    return addData(newEsted);
+
+  switch (selectSort) {
+    case "All":
+      return addData(data);
+
+    case "Ascending":
+      const Ascending = [...data].sort((a, b) => a.price - b.price);
+      return addData(Ascending);
+
+    case "Descending":
+      const Descending = [...data].sort((a, b) => b.price - a.price);
+      return addData(Descending);
+
+    default:
+      throw new Error("Please select an option.");
   }
-  isAscending = !isAscending;
 }
+
+
 // SEARCH DATA
 inputSearch.addEventListener("input", async (e) => {
   const query = e.target.value;
@@ -109,3 +124,4 @@ inputSearch.addEventListener("input", async (e) => {
 
   addData(filtered);
 });
+
