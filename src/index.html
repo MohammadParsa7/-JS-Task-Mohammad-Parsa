@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="/src/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <title>تسک دوره جاوااسکریپت</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="/modal/modal.css" />
+    <script
+      src="https://kit.fontawesome.com/6cf6e39685.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="container">
+      <div class="page-home">
+        <div class="page-wraaper">
+          <h1 class="title">لیست تراکنش ها</h1>
+          <div class="show-modal">
+            <button class="btn-upload">بارگذاری تراکنش ها</button>
+          </div>
+        </div>
+      </div>
+      <div class="backdrop hidden"></div>
+      <div class="page-modal modal hidden">
+        <header>
+          <div class="close">
+            <span class="close-btn">&times;</span>
+          </div>
+
+          <nav class="navbar">
+            <span class="title">لیست تراکنش های شما</span>
+            <span class="modal-search">
+              <input type="text" name="" id="" placeholder="جست و جو تراکنش" class="search"
+              />
+              <i class="icon-search fa fa-search search-icon"></i>
+
+            </span>
+          </nav>
+        </header>
+        <main>
+          <table class="modal-list">
+            <!-- <caption>
+              لیست تراکنش های شما
+            </caption> -->
+            <thead class="list-header">
+              <tr>
+                <th>ردیف</th>
+                <th>نوع تراکنش</th>
+                <th id="sortDate">
+                  <span>مبلغ</span> <i class="fa fa-chevron-down iconPrice"></i>
+                </th>
+                <th>شماره پیگیری</th>
+                <th id="sortDate" style="border-top-left-radius: 2rem">
+                  <span>تاریخ</span> <i class=" fa fa-chevron-down iconDate"></i>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="list-body"></tbody>
+          </table>
+        </main>
+      </div>
+    </section>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
+
+<!-- <div class="backdrop hidden"></div>
+  <section class="modal hidden">
+    <header>
+      <nav class="nav">
+        <span class="title">لیست تراکنش ها</span>
+        <span class="modal-search">
+          <input
+            type="text"
+            placeholder="جست و جو تراکنش "
+            class="search-input"
+          />
+        </span>
+      </nav>
+    </header>
+  </section> -->
