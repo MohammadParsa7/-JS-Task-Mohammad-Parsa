@@ -55,26 +55,28 @@
               <tr>
                 <th>ردیف</th>
                 <th>نوع تراکنش</th>
-                
+
                 <th id="sortDate">
                   <div class="header-container">
                     <span>مبلغ</span>
 
-                    <select
-                      class="sort-price"
-                      aria-label="مرتب‌سازی بر اساس قیمت"
-                    >
+                    <select class="sort sort-price">
                       <option value="All">پیش‌فرض</option>
-                      <option value="Ascending">صعودی </option>
-                      <option value="Descending">نزولی </option>
+                      <option value="Ascending">صعودی</option>
+                      <option value="Descending">نزولی</option>
                     </select>
                   </div>
                 </th>
-                
+
                 <th>شماره پیگیری</th>
-                <th id="sortDate" style="border-top-left-radius: 2rem">
+                <th id="sortDate">
+                  <div class="header-container"></div>
                   <span>تاریخ</span>
-                  <i class="fa fa-chevron-down iconDate"></i>
+                  <select class="sort sort-data">
+                    <option value="All">پیش فرض</option>
+                    <option value="Newest">جدیدترین</option>
+                    <option value="Oldest">قدیمی ترین</option>
+                  </select>
                 </th>
               </tr>
             </thead>
@@ -86,4 +88,3 @@
     <script src="./js/index.js"></script>
   </body>
 </html>
-
